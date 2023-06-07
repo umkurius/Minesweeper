@@ -1,6 +1,13 @@
-import { clicksCount, flagsCount, gamefield, minesCount, minutes, seconds,
-milliseconds } from "./const.js";
-import { cells } from "./const.js";
+import {
+  clicksCount,
+  flagsCount,
+  gamefield,
+  minesCount,
+  minutes,
+  seconds,
+  milliseconds,
+  cells,
+} from './const';
 
 let field = [];
 export let timerId;
@@ -17,8 +24,13 @@ export function createField(width, height, mines) {
   let time = 0;
   let countUsedFlags = mines;
 
-  field = Array.from({length: height * width}, () => 0);
-  
+  field = Array.from(
+    {
+      length: height * width,
+    },
+    () => 0
+  );
+
   field.forEach(() => {
     const cell = document.createElement('div');
 
@@ -40,14 +52,14 @@ export function createField(width, height, mines) {
 
     if (target.classList.contains('hidden')) {
       clickCounter++;
-  
+
       clicksCount.innerHTML = `Clicks: ${clickCounter}`;
     }
   });
 
   function startTimer() {
-    if (arrayForCells.every(el => el.classList.contains('hidden'))) {
-      timerId = setInterval(function() {
+    if (arrayForCells.every((el) => el.classList.contains('hidden'))) {
+      timerId = setInterval(() => {
         ms++;
 
         if (ms === 100) {
@@ -59,7 +71,7 @@ export function createField(width, height, mines) {
             min++;
 
             if (min === 60) {
-                stopTimer();
+              stopTimer();
             }
 
             minutes.innerText = formatTime(min);
@@ -67,11 +79,11 @@ export function createField(width, height, mines) {
 
           seconds.innerText = formatTime(sec);
         }
-        
+
         milliseconds.innerText = formatTime(ms);
 
         if (min) {
-          time = min*60 + sec;
+          time = min * 60 + sec;
           return;
         }
 
@@ -79,16 +91,15 @@ export function createField(width, height, mines) {
       }, 10);
     }
   }
-  
-  if (arrayForCells.every(el => el.classList.contains('hidden'))) {
-    gamefield.onclick = () => {
 
+  if (arrayForCells.every((el) => el.classList.contains('hidden'))) {
+    gamefield.onclick = () => {
       startTimer();
-    }
+    };
   }
-  
+
   function formatTime(param) {
-    return (param < 10) ? ('0' + param) : param;
+    return param < 10 ? `0${param}` : param;
   }
 
   function stopTimer() {
@@ -97,11 +108,11 @@ export function createField(width, height, mines) {
 
   function leftClick(e) {
     const target = e.target;
-    const result = arrayForCells.every(el => el.classList.contains('hidden'));
+    const result = arrayForCells.every((el) => el.classList.contains('hidden'));
     const clickCoordinate = arrayForCells.indexOf(target);
     const x = clickCoordinate % width;
     const y = Math.floor(clickCoordinate / width);
-    
+
     if (result) {
       setRandomMines();
     }
@@ -119,7 +130,7 @@ export function createField(width, height, mines) {
 
   gamefield.addEventListener('click', leftClick);
 
-  gamefield.oncontextmenu = e => {
+  gamefield.oncontextmenu = (e) => {
     const target = e.target;
 
     e.preventDefault();
@@ -137,7 +148,7 @@ export function createField(width, height, mines) {
       flagsCount.innerHTML = `Flags: ${countUsedFlags}`;
       minesCount.innerHTML = `Mines: ${countUsedFlags}`;
     }
-  }
+  };
 
   function clickOnField(x, y) {
     if (!isValid(x, y)) return;
@@ -145,7 +156,7 @@ export function createField(width, height, mines) {
     const coordinate = y * width + x;
     const cell = arrayForCells[coordinate];
 
-    if (cell.innerHTML === '🚩') return
+    if (cell.innerHTML === '🚩') return;
 
     if (!cell.classList.contains('hidden')) return;
 
@@ -156,15 +167,15 @@ export function createField(width, height, mines) {
 
       alert('Game over. Try again');
 
-      for (let el of arrayForMines) {
+      for (const el of arrayForMines) {
         arrayForCells[el].innerHTML = '💣';
       }
 
       gamefield.removeEventListener('click', leftClick);
 
-      gamefield.oncontextmenu = e => {
+      gamefield.oncontextmenu = (e) => {
         e.preventDefault();
-      }
+      };
 
       clearInterval(timerId);
 
@@ -174,27 +185,27 @@ export function createField(width, height, mines) {
     closedCells--;
 
     if (closedCells <= mines) {
-      arrayForCells.forEach(el => {
+      arrayForCells.forEach((el) => {
         if (el.classList.contains('hidden')) {
-          el.innerHTML = '🚩'
+          el.innerHTML = '🚩';
         }
       });
-      
-      gamefield.onclick = e => {
-        e.preventDefault();
-      }
 
-      gamefield.oncontextmenu = e => {
+      gamefield.onclick = (e) => {
         e.preventDefault();
-      }
+      };
+
+      gamefield.oncontextmenu = (e) => {
+        e.preventDefault();
+      };
 
       alert(`Hooray! You found all mines in ${time} seconds and ${clickCounter} moves`);
 
       gamefield.removeEventListener('click', leftClick);
 
-      gamefield.oncontextmenu = e => {
+      gamefield.oncontextmenu = (e) => {
         e.preventDefault();
-      }
+      };
 
       clearInterval(timerId);
 
@@ -202,7 +213,7 @@ export function createField(width, height, mines) {
     }
 
     const countMines = countNearMines(x, y);
-    
+
     if (countMines !== 0) {
       cell.innerHTML = countMines;
       cell.classList.add(`cell-${countMines}`);
@@ -222,7 +233,7 @@ export function createField(width, height, mines) {
 
       return arrayForMines.includes(coordinate);
     }
-    return;
+    return undefined;
   }
 
   function isValid(x, y) {

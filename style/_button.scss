@@ -1,16 +1,16 @@
 .button {
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   background-color: inherit;
-  transition: .2s;
-  color: #EDEDED;
+  transition: 0.2s;
+  color: #ededed;
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
-    color: #BB8F38;
-    border: 1px solid #BB8F38;
-    box-shadow: 0 0 10px 1px #BB8F38;
+    color: #bb8f38;
+    border: 1px solid #bb8f38;
+    box-shadow: 0 0 10px 1px #bb8f38;
   }
   &:active {
     transform: scale(1);

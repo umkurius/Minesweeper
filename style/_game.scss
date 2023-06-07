@@ -6,11 +6,11 @@
       width: 45px;
       height: 45px;
     }
-    width: calc(45px*10);
-    height: calc(45px*10);
+    width: calc(45px * 10);
+    height: calc(45px * 10);
     @media (max-width: 510px) {
-      width: calc(40px*10);
-      height: calc(40px*10);
+      width: calc(40px * 10);
+      height: calc(40px * 10);
       .cell {
         width: 40px;
         height: 40px;
@@ -22,11 +22,11 @@
       width: 33px;
       height: 33px;
     }
-    width: calc(33px*15);
-    height: calc(33px*15);
+    width: calc(33px * 15);
+    height: calc(33px * 15);
     @media (max-width: 510px) {
-      width: calc(30px*15);
-      height: calc(30px*15);
+      width: calc(30px * 15);
+      height: calc(30px * 15);
       .cell {
         width: 30px;
         height: 30px;
@@ -38,11 +38,11 @@
       width: 30px;
       height: 30px;
     }
-    width: calc(30px*25);
-    height: calc(30px*25);
+    width: calc(30px * 25);
+    height: calc(30px * 25);
     @media (max-width: 550px) {
-      width: calc(18px*25);
-      height: calc(18px*25);
+      width: calc(18px * 25);
+      height: calc(18px * 25);
       .cell {
         width: 18px;
         height: 18px;

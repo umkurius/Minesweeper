@@ -1,9 +1,24 @@
-import { easyButton, hardButton, normalButton, mode, modeName, modeDesc,
-newGameButton, gamefield, gameInformation, timer, minesCount, flagsCount,
-clicksCount, minutes, seconds, milliseconds} from "./const.js";
-import { createField, timerId } from "./renderField.js";
+import {
+  easyButton,
+  hardButton,
+  normalButton,
+  mode,
+  modeName,
+  modeDesc,
+  newGameButton,
+  gamefield,
+  gameInformation,
+  timer,
+  minesCount,
+  flagsCount,
+  clicksCount,
+  minutes,
+  seconds,
+  milliseconds,
+} from './const';
+import { createField, timerId } from './renderField';
 
- export function getMode(width, height, mines, text) {
+export function getMode(width, height, mines, text) {
   gamefield.innerHTML = '';
   mode.innerHTML = '';
 
@@ -12,7 +27,7 @@ import { createField, timerId } from "./renderField.js";
 
   modeName.innerHTML = text;
   modeDesc.innerHTML = `Field: ${width} x ${height} Mines: <input id='input' type='text' value='${mines}'>`;
-  
+
   mode.append(newGameButton);
   mode.append(gameInformation);
 
@@ -32,7 +47,7 @@ import { createField, timerId } from "./renderField.js";
 
   input.addEventListener('blur', () => {
     mines = input.value;
-  })
+  });
 
   newGameButton.onclick = () => {
     gamefield.innerHTML = '';
@@ -46,7 +61,7 @@ import { createField, timerId } from "./renderField.js";
     }
 
     modeParam(width, height, mines);
-  }
+  };
 }
 
 function modeParam(width, height, mines) {
@@ -65,27 +80,24 @@ function modeParam(width, height, mines) {
 
 export default function renderDifficulty() {
   easyButton.addEventListener('click', () => {
-
     getMode(10, 10, 10, 'Easy game');
-    
+
     gamefield.classList.add('game__easy');
     gamefield.classList.remove('game__normal');
     gamefield.classList.remove('game__hard');
   });
 
   normalButton.addEventListener('click', () => {
+    getMode(15, 15, 40, 'Normal game');
 
-    getMode(15, 15, 40, 'Normal game')
-    
     gamefield.classList.add('game__normal');
     gamefield.classList.remove('game__easy');
     gamefield.classList.remove('game__hard');
   });
 
   hardButton.addEventListener('click', () => {
-
     getMode(25, 25, 99, 'Hard game');
-    
+
     gamefield.classList.add('game__hard');
     gamefield.classList.remove('game__easy');
     gamefield.classList.remove('game__normal');

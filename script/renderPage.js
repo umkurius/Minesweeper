@@ -1,7 +1,18 @@
-import { body, header, headerTitle, container, main, mainInner,
-  easyButton, normalButton, hardButton, mode, gamefield,
-  buttonsField} from "./const.js";
-  
+import {
+  body,
+  header,
+  headerTitle,
+  container,
+  main,
+  mainInner,
+  easyButton,
+  normalButton,
+  hardButton,
+  mode,
+  gamefield,
+  buttonsField,
+} from './const';
+
 export default function renderPage() {
   body.append(header);
   header.append(container);

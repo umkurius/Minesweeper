@@ -14,7 +14,7 @@ export const modeDesc = document.createElement('div');
 export const gamefield = document.createElement('div');
 export const newGameButton = document.createElement('button');
 export const cells = document.getElementsByClassName('cell');
-export const gameInformation = document.createElement('div')
+export const gameInformation = document.createElement('div');
 export const timer = document.createElement('div');
 export const minutes = document.createElement('div');
 export const seconds = document.createElement('div');
@@ -31,7 +31,7 @@ mainInner.classList.add('main__inner');
 mode.classList.add('mode');
 modeName.classList.add('mode__name');
 modeDesc.classList.add('mode__desc');
-buttonsField.classList.add('main__buttons')
+buttonsField.classList.add('main__buttons');
 easyButton.classList.add('button');
 easyButton.innerHTML = 'Easy';
 normalButton.classList.add('button');
