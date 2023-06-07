@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-size: 10px;
+  background-color: #000000;
+  color: #EDEDED;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #BB8F38;
+  margin: 20px 0 10px;
+}
+
+.button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #EDEDED;
+  background-color: inherit;
+  transition: 0.2s;
+  color: #EDEDED;
+}
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: #BB8F38;
+  border: 1px solid #BB8F38;
+  box-shadow: 0 0 10px 1px #BB8F38;
+}
+.button:active {
+  transform: scale(1);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+.main__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main__buttons {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  justify-content: space-between;
+}
+
+.cell {
+  border: 1px solid #6F6F6F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: rgb(181, 179, 179);
+}
+
+.hidden {
+  border: 4px solid #9E9E9E;
+  background-color: #6F6F6F;
+  border-style: outset;
+  cursor: pointer;
+}
+
+.cell-1 {
+  color: blue;
+}
+
+.cell-2 {
+  color: green;
+}
+
+.cell-3 {
+  color: red;
+}
+
+.cell-4 {
+  color: darkblue;
+}
+
+.cell-5 {
+  color: brown;
+}
+
+.cell-6 {
+  color: turquoise;
+}
+
+.cell-7 {
+  color: black;
+}
+
+.cell-8 {
+  color: white;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.game__easy {
+  width: 450px;
+  height: 450px;
+}
+.game__easy .cell {
+  width: 45px;
+  height: 45px;
+}
+@media (max-width: 510px) {
+  .game__easy {
+    width: 400px;
+    height: 400px;
+  }
+  .game__easy .cell {
+    width: 40px;
+    height: 40px;
+  }
+}
+.game__normal {
+  width: 495px;
+  height: 495px;
+}
+.game__normal .cell {
+  width: 33px;
+  height: 33px;
+}
+@media (max-width: 510px) {
+  .game__normal {
+    width: 450px;
+    height: 450px;
+  }
+  .game__normal .cell {
+    width: 30px;
+    height: 30px;
+  }
+}
+.game__hard {
+  width: 750px;
+  height: 750px;
+}
+.game__hard .cell {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 550px) {
+  .game__hard {
+    width: 450px;
+    height: 450px;
+  }
+  .game__hard .cell {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.mode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+.mode__name {
+  text-align: center;
+}
+.mode__desc {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.mode__desc input {
+  width: 27px;
+  border: 2px solid #EDEDED;
+  border-radius: 5px;
+  margin-left: 10px;
+  background-color: inherit;
+  color: #EDEDED;
+  font-size: 1rem;
+  padding: 2px;
+}
+.mode__desc input:focus {
+  outline: none;
+}
+.mode__information {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  margin-top: 10px;
+}
+
+.timer {
+  display: flex;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  border: 1px solid #EDEDED;
+  border-radius: 5px;
+  padding: 3px;
+}/*# sourceMappingURL=style.css.map */

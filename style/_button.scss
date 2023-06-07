@@ -1,0 +1,18 @@
+.button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #EDEDED;
+  background-color: inherit;
+  transition: .2s;
+  color: #EDEDED;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: #BB8F38;
+    border: 1px solid #BB8F38;
+    box-shadow: 0 0 10px 1px #BB8F38;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,35 @@
+.mode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 1rem;
+  &__name {
+    text-align: center;
+  }
+  &__desc {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    input {
+      width: 27px;
+      border: 2px solid #EDEDED;
+      border-radius: 5px;
+      margin-left: 10px;
+      background-color: inherit;
+      color: #EDEDED;
+      font-size: 1rem;
+      padding: 2px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &__information {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 10px;
+  }
+}
